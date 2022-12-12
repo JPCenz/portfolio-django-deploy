@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+CSRF_TRUSTED_ORIGINS = []
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'joQX7aGYGWoMOqmGZRKB@containers-us-west-157.railway.app',
+        'PASSWORD': 'joQX7aGYGWoMOqmGZRKB',
+        'HOST': 'containers-us-west-157.railway.app',
         'PORT': '6064',
     }
 }
