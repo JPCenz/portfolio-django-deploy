@@ -23,7 +23,7 @@
 
 
 
-  <section class="section">
+  <section class="section " style= "background-color:#F4ECF7;">
     
     <div class="container">
       {% if request.user.is_authenticated %}
@@ -35,7 +35,7 @@
       <div class="row">
         {% for p in object_list%}
         
-        <div class="col-lg-12 col-sm-12 mb-4">
+        <div class="col-lg-6 col-sm-6 mb-4">
           <article class="card shadow">
             <img class="rounded card-img-top" src='{{ p.photo_url }}' alt="repo-image">
             <div class="card-body">
