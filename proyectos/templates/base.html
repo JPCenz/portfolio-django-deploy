@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio Template</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}" >
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href=:"{% static 'plugins/themify-icons/themify-icons.css' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Main Stylesheet -->
+  <link href= "{% static 'css/style.css' %}"  rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"  type="image/x-icon">
+  <link rel="icon" href="{% static 'images/favicon.ico' %}"  type="image/x-icon">
+
+</head>
+
+
+<body>
+  <header class="navigation fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand font-tertiary h3" href={% url 'index' %}>JPCenz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href={% url 'index' %}>Home</a>
+          </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>Blog</a>
+          </li> {% endcomment %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'portfolio' %}>Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'login' %}>login</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'logout' %}>logout</a> 
+          </li>
+          {% endif %}
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>Contact</a>
+          </li> {% endcomment %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}
+
+  {% endblock content %}
+
+    <!-- footer -->
+  <footer class="bg-dark" style="{padding-top: 100px}">
+    <div class="container pt-5 mt-4">
+      
+      <ul class="row justify-content-center justify-content-md-start">
+        
+        <li class="mb-2 col-md-3  "><a class="text-white" href="#"><i class="fa fa-facebook" style="font-size:26px" ></i></a></li>
+        <li class="mb-2 col-md-3  "><a class="text-white" href="#"><i class="fa fa-instagram" style="font-size:26px"></i></a></li>
+        <li class="mb-2 col-md-3  "><a class="text-white" href="#"><i class="fa fa-linkedin" style="font-size:26px"></i></a></li>
+        <li class="mb-2 col-md-3  "><a class="text-white" href="#"><i class="fa fa-github" style="font-size:26px"></i></a></li>
+        
+      </ul>
+    
+  </div>
+    
+  
+    <div class="section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="text-light">Email</h5>
+            <p class="text-white paragraph-lg font-secondary">p.cenzano@gmail.com</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-light">Phone</h5>
+            <p class="text-white paragraph-lg font-secondary">+51 980372253</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-light">Address</h5>
+            <p class="text-white paragraph-lg font-secondary">Lima,Peru</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-top text-center border-dark py-5">
+      <p class="mb-0 text-light">Copyright ©<script>
+          var CurrentYear = new Date().getFullYear()
+          document.write(CurrentYear)
+        </script> a theme by <a href="themefisher.com">themefisher.com</a></p>
+    </div>
+  </footer>
+  <!-- /footer -->
+
+  <!-- jQuery -->
+  <script src={% static 'plugins/jQuery/jquery.min.js' %} ></script>
+  <!-- Bootstrap JS -->
+  <script src= {% static 'plugins/bootstrap/bootstrap.min.js' %}></script>
+  <!-- slick slider -->
+  <script src= {% static 'plugins/slick/slick.min.js' %}></script>
+  <!-- filter -->
+  <script src= {% static 'plugins/shuffle/shuffle.min.js' %} ></script>
+
+  <!-- Main Script -->
+  <script src= {% static 'js/script.js' %}></script>
+
+</body>
+</html>
