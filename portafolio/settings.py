@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'whitenoise.runserver_nostatic',
     "proyectos.apps.ProyectosConfig",
     "users.apps.UsersConfig",
 ]
@@ -122,9 +123,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_URL = "static/"
-STATICFILES_DIR = (os.path.join(BASE_DIR,'portafolio/static'),)
+STATICFILES_DIR = (os.path.join(BASE_DIR,'portafolio/static/'),)
+STATIC_ROOT = os.path.join(BASE_DIR,'portafolio/static/')
+
 
 
 # Default primary key field type
